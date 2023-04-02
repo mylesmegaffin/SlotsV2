@@ -8,6 +8,11 @@ namespace Slots
     {
         static void Main(string[] args)
         {
+            Game();
+        }
+
+        public static void Game()
+        {
             decimal totalDeposited = 0;
             decimal totalWinnings = 0;
             Slot slot = new Slot(100);
