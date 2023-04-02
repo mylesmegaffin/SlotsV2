@@ -18,7 +18,6 @@ namespace SlotsV2
             "!",
             "=",
             "$",
-            "@",
             "*",
             "9",
             "7"
@@ -35,9 +34,9 @@ namespace SlotsV2
         {
             Random random = new Random();
 
-            string wheel1 = wheel.ElementAt(random.Next(0, 7));
-            string wheel2 = wheel.ElementAt(random.Next(0, 7));
-            string wheel3 = wheel.ElementAt(random.Next(0, 7));
+            string wheel1 = wheel.ElementAt(random.Next(0, 6));
+            string wheel2 = wheel.ElementAt(random.Next(0, 6));
+            string wheel3 = wheel.ElementAt(random.Next(0, 6));
 
             Jackpot += bet/4;
             Console.WriteLine("-------------");
@@ -49,7 +48,8 @@ namespace SlotsV2
             {
                 if (wheel1.Equals("7"))
                 {
-                    Win = bet * 100;
+                    Win = bet + Jackpot;
+                    Jackpot = 100;
                     Console.WriteLine($"Jackpot: ${Win}");
                 }
                 else
